@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import CartContextProvider from './contexts/CartContext';
+import WishlistContextProvider from './contexts/WishlistContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <CartContextProvider>
+      <WishlistContextProvider>
+        <App />
+      </WishlistContextProvider>
+    </CartContextProvider>
   </React.StrictMode>
 );
 
@@ -15,3 +21,5 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+
