@@ -1,0 +1,64 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Electronics",
+            "image": "electronics.png",
+            "products": [
+                {"id": 101, "name": "Laptop", "image": "laptop.png", "price": 999.99},
+                {"id": 102, "name": "Smartphone", "image": "smartphone.png", "price": 599.99},
+                {"id": 103, "name": "Smartwatch", "image": "smartwatch.png", "price": 299.99},
+                {"id": 104, "name": "Camera", "image": "camera.png", "price": 459.99},
+                {"id": 105, "name": "Tablet", "image": "tablet.png", "price": 329.99}
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Clothing",
+            "image": "clothing.png",
+            "products": [
+                {"id": 201, "name": "T-Shirt", "image": "t-shirt.png", "price": 29.99},
+                {"id": 202, "name": "Jeans", "image": "jeans.png", "price": 49.99},
+                {"id": 203, "name": "Jacket", "image": "jacket.png", "price": 89.99},
+                {"id": 204, "name": "Sneakers", "image": "sneakers.png", "price": 59.99},
+                {"id": 205, "name": "Hat", "image": "hat.png", "price": 19.99}
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Toys",
+            "image": "toys.png",
+            "products": [
+                {"id": 301, "name": "Lego Set", "image": "lego.png", "price": 59.99},
+                {"id": 302, "name": "Doll", "image": "doll.png", "price": 15.99},
+                {"id": 303, "name": "Board Game", "image": "boardgame.png", "price": 34.99},
+                {"id": 304, "name": "Action Figure", "image": "action_figure.png", "price": 22.99},
+                {"id": 305, "name": "Puzzle", "image": "puzzles.png", "price": 12.99}
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Furniture",
+            "image": "furniture.png",
+            "products": [
+                {"id": 401, "name": "Chair", "image": "chair.png", "price": 49.99},
+                {"id": 402, "name": "Desk", "image": "desk.png", "price": 199.99},
+                {"id": 403, "name": "Sofa", "image": "sofa.png", "price": 499.99},
+                {"id": 404, "name": "Bed", "image": "bed.png", "price": 299.99},
+                {"id": 405, "name": "Wardrobe", "image": "wardrobe.png", "price": 239.99}
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Food",
+            "image": "food.png",
+            "products": [
+                {"id": 501, "name": "Chocolate", "image": "chocolate.png", "price": 2.99},
+                {"id": 502, "name": "Bread", "image": "bread.png", "price": 1.99},
+                {"id": 503, "name": "Cheese", "image": "cheese.png", "price": 4.99},
+                {"id": 504, "name": "Wine", "image": "wine.png", "price": 19.99}
+            ]
+        }
+    ]
+}
+            

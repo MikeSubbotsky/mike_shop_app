@@ -8,13 +8,15 @@ import Footer from './components/Footer';
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/category/:categoryId" element={<CategoryPage />} />
-        <Route path="/product/:productId" element={<ProductPage />} />
-      </Routes>
-      <Footer />
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/category/:categoryId" element={<CategoryPage />} />
+          <Route path="/product/:productId" element={<ProductPage />} />
+        </Routes>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }
