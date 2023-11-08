@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import CategoriesDropdown from './CategoriesDropdown'; // Import the new component
+import CategoriesDropdown from './CategoriesDropdown'; 
 
 const Header = () => {
     const [isDropdownVisible, setIsDropdownVisible] = useState(false);
