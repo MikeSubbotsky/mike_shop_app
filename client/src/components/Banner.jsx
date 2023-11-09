@@ -2,10 +2,11 @@ import React from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import NextArrow from './NextArrow';
-import PrevArrow from './PreviousArrow';
+import PrevArrow from './PrevArrow';
+import Heading from './Heading';
+import './Banner.css';
 
 const Banner = ({ items }) => {
-  // Settings for the slider
   const settings = {
     infinite: true,
     speed: 500,
@@ -18,25 +19,27 @@ const Banner = ({ items }) => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative bg-purple-200 pb-6">
       <Slider {...settings}>
-        {items.categories.map((item) => (
-          <div key={item.id} className="w-full">
+      {items.categories.map((item) => (
+        <div key={item.id} className="banner-item w-full relative">
             <Link to={item.products ? `/category/${item.id}` : `/product/${item.id}`}>
-              <div className="w-full h-96 bg-cover bg-center" style={{ 
+            <div className="text-center mb-4">
+                <Heading text={item.name} />
+            </div>
+            <div className="banner-image-container">
+                <div className="w-full h-96 bg-cover bg-center hover:opacity-80" style={{ 
                     backgroundImage: `url(${require(`../images/categories/${item.image}`)})`,
                     backgroundSize: 'contain', 
                     backgroundRepeat: 'no-repeat' 
                 }}>
-                <div className="bg-black bg-opacity-30 w-full h-full flex items-center justify-center">
-                  <div className="text-white text-center">
-                    <h2 className="text-4xl font-bold">{item.name}</h2>
-                    {item.products && <p className="text-xl mt-2">Explore {item.name}</p>}
-                  </div>
                 </div>
-              </div>
+                <div className="explore-text">
+                Explore {item.name}
+                </div>
+            </div>
             </Link>
-          </div>
+        </div>
         ))}
       </Slider>
     </div>
@@ -44,4 +47,5 @@ const Banner = ({ items }) => {
 };
 
 export default Banner;
+
 

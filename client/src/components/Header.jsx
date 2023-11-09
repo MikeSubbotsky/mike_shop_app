@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
 import { WishlistContext } from '../contexts/WishlistContext';
 import CategoriesDropdown from './CategoriesDropdown';
@@ -7,6 +7,7 @@ import CartSidebar from './CartSidebar'; // Make sure you have this component cr
 import WishlistSidebar from './WishlistSidebar'; // Make sure you have this component created
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faHeart } from '@fortawesome/free-solid-svg-icons';
+import './Header.css';
 
 
 const Header = () => {
@@ -25,23 +26,33 @@ const Header = () => {
         setIsWishlistSidebarVisible(!isWishlistSidebarVisible);
     };
 
+    const toggleCategoriesDropdown = () => {
+        setIsDropdownVisible(!isDropdownVisible);
+    };
+
     return (
         <header className="bg-gray-800 text-white">
             <nav className="container mx-auto flex justify-between items-center py-4">
                 <ul className="flex">
                     <li className="ml-6">
-                        <Link to="/" className="hover:text-gray-400">
+                        <NavLink 
+                            to="/" 
+                            className={({ isActive }) => 
+                                isActive ? 'custom-underline hover:text-gray-400' : 'hover:text-gray-400'
+                            }
+                        >
                             Home
-                        </Link>
+                        </NavLink>
                     </li>
                     <li className="ml-6 relative">
                         <div className='pb-2'
                             onMouseEnter={() => setIsDropdownVisible(true)}
                             onMouseLeave={() => setIsDropdownVisible(false)}
+                            onClick={toggleCategoriesDropdown}
                         >
-                            <Link to="/categories" className="hover:text-gray-400">
+                            <span className="hover:text-gray-400 cursor-pointer">
                                 Categories
-                            </Link>
+                            </span>
                             {isDropdownVisible && <CategoriesDropdown />}
                         </div>
                     </li>
