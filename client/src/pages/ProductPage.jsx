@@ -24,6 +24,16 @@ const ProductPage = () => {
 
   const imagePath = require(`../images/products/${product.image}`);
 
+    // Function to handle adding product to cart
+    const handleAddToCart = () => {
+      addItemToCart(product);
+    };
+  
+    // Function to handle adding product to wishlist
+    const handleAddToWishlist = () => {
+      addItemToWishlist(product);
+    };
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col md:flex-row items-center">
@@ -37,14 +47,14 @@ const ProductPage = () => {
           <p className="text-gray-600 mb-6">{product.description}</p>
           <div className="flex gap-4">
             <button 
-              className={`bg-blue-500 text-white px-4 py-2 rounded ${!product.isAvailable ? 'opacity-50 cursor-not-allowed' : ''}`}
-              onClick={() => addItemToCart(product)}
+              className={`bg-yellow-500 text-white px-4 py-2 rounded ${!product.isAvailable ? 'opacity-50 cursor-not-allowed' : ''}`}
+              onClick={() => handleAddToCart(product)}
               disabled={!product.isAvailable}
             >
               Add to Cart
             </button>
             <button className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded transition duration-300 ease-in-out"
-              onClick={() => addItemToWishlist(product)}
+              onClick={() => handleAddToWishlist(product)}
             >
               Add to Wishlist
             </button>

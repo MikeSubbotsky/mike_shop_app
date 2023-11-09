@@ -6,14 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import CartContextProvider from './contexts/CartContext';
 import WishlistContextProvider from './contexts/WishlistContext';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CartContextProvider>
-      <WishlistContextProvider>
-        <App />
-      </WishlistContextProvider>
-    </CartContextProvider>
+
+      <CartContextProvider>
+        <WishlistContextProvider>
+          <App />
+        </WishlistContextProvider>
+      </CartContextProvider>
+
   </React.StrictMode>
 );
 
