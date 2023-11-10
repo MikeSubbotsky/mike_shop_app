@@ -1,36 +1,16 @@
-// import React, { useState } from 'react';
-// import data from '../data/data.json'
-// import Banner from '../components/Banner';
-
-// const HomePage = () => {
-//   const [bannerItems, setBannerItems] = useState(data);
-
-
-
-//   return (
-//     <div>
-//       <Banner items={bannerItems} />
-//       {/* ... other components */}
-//     </div>
-//   );
-// };
-
-// export default HomePage;
-
-// HomePage.js
 import React, { useState } from 'react';
 import data from '../data/data.json';
 import Banner from '../components/Banner';
-import CategoryCard from '../components/CategoryCard'; // Make sure to create this component
-import ProductCard from '../components/ProductCard'; // Make sure to create this component
+import CategoryCard from '../components/CategoryCard';
+import ProductCard from '../components/ProductCard'; 
 import Heading from '../components/Heading';
 
 const HomePage = () => {
   const [bannerItems, setBannerItems] = useState(data);
-  // Assuming the first four categories are the recommended ones
+  // The first four categories are the recommended ones
   const recommendedCategories = data.categories.slice(0, 4);
 
-  // Assuming the first product of each recommended category is the recommended product
+  // The first product of each recommended category is the recommended product
   const recommendedProducts = recommendedCategories.map(category => category.products[0]);
 
   return (
@@ -50,7 +30,6 @@ const HomePage = () => {
           ))}
         </div>
       </div>
-      {/* ... other components */}
     </div>
   );
 };

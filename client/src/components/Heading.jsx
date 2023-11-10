@@ -1,5 +1,5 @@
 import React from 'react';
-import './Heading.css'; // This will be your custom CSS file
+import './Heading.css'; 
 
 const Heading = ({ text }) => {
   return (

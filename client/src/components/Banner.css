@@ -1,12 +1,11 @@
-/* Add this to your CSS file */
 .slick-next:before, .slick-prev:before {
     display: none; /* This hides the default arrows */
 }
 
 /* Custom arrow styles */
 .custom-arrow {
-    font-size: 24px; /* Adjust the size as needed */
-    color: white; /* Adjust the color as needed */
+    font-size: 24px; 
+    color: white; 
 }
 
 
@@ -28,7 +27,7 @@
     background: -webkit-linear-gradient(45deg, rgb(255, 102, 0), #9a0486);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 2.5rem; /* Adjust size as needed */
+    font-size: 2.5rem; 
     font-weight: 700;
     padding: 10px 0;
     font-family: 'Poppins', sans-serif;

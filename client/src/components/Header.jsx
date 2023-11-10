@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
 import { WishlistContext } from '../contexts/WishlistContext';
 import CategoriesDropdown from './CategoriesDropdown';
-import CartSidebar from './CartSidebar'; // Make sure you have this component created
-import WishlistSidebar from './WishlistSidebar'; // Make sure you have this component created
+import CartSidebar from './CartSidebar'; 
+import WishlistSidebar from './WishlistSidebar'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faHeart } from '@fortawesome/free-solid-svg-icons';
 import './Header.css';

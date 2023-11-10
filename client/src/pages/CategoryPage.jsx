@@ -1,17 +1,15 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import ProductCard from '../components/ProductCard'; // Assuming you have a ProductCard component
-import data from '../data/data.json'; // Your local JSON data
+import ProductCard from '../components/ProductCard'; 
+import data from '../data/data.json'; 
 import Heading from '../components/Heading';
 
 const CategoryPage = () => {
   let { categoryId } = useParams();
-  categoryId = parseInt(categoryId, 10); // Convert to number if necessary
+  categoryId = parseInt(categoryId, 10); 
 
-  // Find the category in the data
   const category = data.categories.find(c => c.id === categoryId);
 
-  // If the category doesn't exist, you can redirect or show an error message
   if (!category) {
     return <div>Category not found</div>;
   }

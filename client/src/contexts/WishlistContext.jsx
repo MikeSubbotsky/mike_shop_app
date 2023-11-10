@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useCallback } from 'react';
 import { toast } from 'react-toastify';
 
 export const WishlistContext = createContext();
@@ -6,27 +6,33 @@ export const WishlistContext = createContext();
 const WishlistContextProvider = ({ children }) => {
     const [wishlistItems, setWishlistItems] = useState([]);
 
-    const addItemToWishlist = (item) => {
+    const addItemToWishlist = useCallback((item) => {
         if (!wishlistItems.some(wishlistItem => wishlistItem.id === item.id)) {
-            setWishlistItems([...wishlistItems, item]);
+            setWishlistItems(prevItems => [...prevItems, item]);
+            toast.success(`Item added to wishlist!`, { position: "bottom-right" });
         }
-        toast.success(`Item added to wishlist!`, { position: "bottom-right" });
-    };
+    }, [wishlistItems]); 
 
-    const removeItemFromWishlist = (itemId) => {
-        setWishlistItems(wishlistItems.filter(wishlistItem => wishlistItem.id !== itemId));
+    const removeItemFromWishlist = useCallback((itemId) => {
+        setWishlistItems(prevItems => prevItems.filter(wishlistItem => wishlistItem.id !== itemId));
         toast.error(`Item removed from wishlist!`, { position: "bottom-right" });
-    };
+    }, [wishlistItems]); 
 
-    const clearWishlist = () => {
+    const clearWishlist = useCallback(() => {
         setWishlistItems([]);
-    };
+    }, []); 
 
     return (
-        <WishlistContext.Provider value={{ wishlistItems, addItemToWishlist, removeItemFromWishlist, clearWishlist }}>
+        <WishlistContext.Provider value={{
+            wishlistItems,
+            addItemToWishlist,
+            removeItemFromWishlist,
+            clearWishlist
+        }}>
             {children}
         </WishlistContext.Provider>
     );
 };
 
 export default WishlistContextProvider;
+
